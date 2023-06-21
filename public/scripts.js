@@ -26,10 +26,10 @@ onwheel = (event) => {
     audio.play();
 };
 
-onscroll = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-};
+// onscroll = (event) => {
+//     event.preventDefault();
+//     event.stopPropagation();
+// };
 
 onclick = (event) => {
     if (event.button == 0) {

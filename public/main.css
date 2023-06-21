@@ -9,14 +9,15 @@
   -webkit-text-size-adjust: none;
 }
 
-/* html { */
-/*   overflow: hidden; */
-/*   overscroll-behavior: none; */
-/* } */
+html {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 
 body {
   position: absolute;
   width: 100%;
+  /* overflow: hidden; */
 }
 
 /* body { */
