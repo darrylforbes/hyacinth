@@ -11,7 +11,8 @@
 
 html {
   overflow: hidden;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
+  overscroll-behavior: contain;
 }
 
 body {
