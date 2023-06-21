@@ -2,6 +2,7 @@ const letters = ["_", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
                  "v", "w", "x", "y", "z"]
 
+let scroll = 0;
 let index = 0;
 let audio;
 
@@ -12,16 +13,21 @@ onwheel = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
-    index -= Math.round(event.wheelDelta / 360);
+    scroll -= event.wheelDelta / 360;
     let len = letters.length;
-    index = ((index % len) + len) % len;
+    index = ((Math.round(scroll) % len) + len) % len;
     document.querySelector("h2").innerHTML = letters[index];
+    document.querySelector("h3").innerHTML = scroll;
 
     try {
         audio.pause()
     } catch {}
     audio = new Audio(`audio/${letters[index]}.m4a`);
     audio.play();
+};
+
+ontouchmove = (event) => {
+    document.trigger('wheel');
 };
 
 onclick = (event) => {
