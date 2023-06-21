@@ -9,11 +9,12 @@
   -webkit-text-size-adjust: none;
 }
 
+html {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 body {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  /* width: 100%; */
+  position: absolute;
+  width: 100%;
 }
