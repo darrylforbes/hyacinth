@@ -21,6 +21,22 @@ onwheel = (event) => {
     audio.play();
 };
 
+onmousewheel = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    index -= Math.round(event.wheelDelta / 360);
+    let len = letters.length;
+    index = ((index % len) + len) % len;
+    document.querySelector("h2").innerHTML = letters[index];
+
+    try {
+        audio.pause()
+    } catch {}
+    audio = new Audio(`audio/${letters[index]}.m4a`);
+    audio.play();
+};
+
 onclick = (event) => {
     if (event.button == 0) {
         document.querySelector("h1").innerHTML += letters[index];
