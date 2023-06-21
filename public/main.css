@@ -11,15 +11,16 @@
 
 html {
   overflow: hidden;
-  overscroll-behavior: none;
+  height: 100%;
   /* overscroll-behavior: contain; */
 }
 
 body {
   position: absolute;
   width: 100%;
-  overflow: hidden;
-  overscroll-behavior: contain;
+  height: 100%;
+  overflow: auto;
+  /* overscroll-behavior: contain; */
 }
 
 /* body { */
