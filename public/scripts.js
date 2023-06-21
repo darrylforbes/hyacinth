@@ -27,7 +27,8 @@ onwheel = (event) => {
 };
 
 ontouchmove = (event) => {
-    document.trigger('wheel');
+    document.trigger("wheel");
+    alert("touchmove");
 };
 
 onclick = (event) => {
