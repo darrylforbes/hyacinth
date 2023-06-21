@@ -26,11 +26,6 @@ onwheel = (event) => {
     audio.play();
 };
 
-// onscroll = (event) => {
-//     event.preventDefault();
-//     event.stopPropagation();
-// };
-
 onclick = (event) => {
     if (event.button == 0) {
         document.querySelector("h1").innerHTML += letters[index];
