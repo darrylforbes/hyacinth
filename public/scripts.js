@@ -5,6 +5,9 @@ const letters = ["_", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 let index = 0;
 let audio;
 
+// onscroll = (event) => {
+//     // event.preventDefault();
+//     // event.stopPropagation();
 onwheel = (event) => {
     event.preventDefault();
     event.stopPropagation();
