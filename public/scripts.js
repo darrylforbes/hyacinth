@@ -26,9 +26,9 @@ onwheel = (event) => {
     audio.play();
 };
 
-ontouchmove = (event) => {
-    document.trigger("wheel");
-    alert("touchmove");
+onscroll = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 };
 
 onclick = (event) => {
