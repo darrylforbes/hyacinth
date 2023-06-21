@@ -9,16 +9,17 @@
   -webkit-text-size-adjust: none;
 }
 
-html {
-  overflow: hidden;
-  /* overscroll-behavior: none; */
-  overscroll-behavior: contain;
-}
+/* html { */
+/*   overflow: hidden; */
+/*   /1* overscroll-behavior: none; *1/ */
+/*   overscroll-behavior: contain; */
+/* } */
 
 body {
   position: absolute;
   width: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 
 /* body { */
