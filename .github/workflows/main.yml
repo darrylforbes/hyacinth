@@ -36,13 +36,13 @@ jobs:
         run: echo "::set-output name=SHA7::$(git rev-parse --short HEAD)"
 
       - name: Build docker image
-        run: docker build --tag darrylforbes/personal-website-nginx:${{ steps.vars.outputs.SHA7 }} .
+        run: docker build --tag darrylforbes/hyacinth-nginx:${{ steps.vars.outputs.SHA7 }} .
 
       - name: Log into registry
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Push image
-        run: docker push darrylforbes/personal-website-nginx:${{ steps.vars.outputs.SHA7 }}
+        run: docker push darrylforbes/hyacinth-nginx:${{ steps.vars.outputs.SHA7 }}
 
   push:
     needs: build
@@ -60,10 +60,10 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Pull docker image
-        run: docker pull darrylforbes/personal-website-nginx:${{ steps.vars.outputs.SHA7 }}
+        run: docker pull darrylforbes/hyacinth-nginx:${{ steps.vars.outputs.SHA7 }}
 
       - name: Tag image
-        run: docker tag darrylforbes/personal-website-nginx:${{ steps.vars.outputs.SHA7 }} darrylforbes/personal-website-nginx:latest
+        run: docker tag darrylforbes/hyacinth-nginx:${{ steps.vars.outputs.SHA7 }} darrylforbes/hyacinth-nginx:latest
 
       - name: Push image
-        run: docker push darrylforbes/personal-website-nginx:latest
+        run: docker push darrylforbes/hyacinth-nginx:latest
