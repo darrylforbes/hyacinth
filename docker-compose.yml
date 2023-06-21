@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: darrylforbes/hyacinth-nginx
+    networks:
+      - nginx-network
+    expose:
+      - 80
+
+networks:
+  nginx-network:
+    external:
+      name: nginx-network
